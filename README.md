@@ -10,7 +10,7 @@ from the backend **messages-api-postgresql-go**.
 
 ## ✨ Features
 
--- 🔐 Secure Authentication: Uses secure service account credentials to communicate with backend.
+- 🔐 Secure Authentication: Uses secure service account credentials to communicate with backend.
 - 📨 Message Consumption: Fetches and displays messages from the backend in real-time.
 - ⚡ Fast Rendering: Leverages Next.js for fast server-side rendering and static generation.
 
