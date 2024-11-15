@@ -1,0 +1,385 @@
+/* app/globals.css */
+
+/*- Body ---------------------------------------------------------- */
+
+body, html {
+  min-height: 100%;
+}
+body {
+  color: #fff;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*- Overskrifter ----------------------------------------------------------------- */
+h1 {
+  font: normal 22px Arial, sans-serif;
+  color: #ffff;
+  padding: 12px 0px 12px 0px;
+  margin: 0;
+}
+
+/*- Paragrafer og span ----------------------------------------------------------- */
+p {
+  font: normal 16px Arial, sans-serif;
+  color: #fff;
+  padding: 12px 0px 12px 0px;
+  margin: 0;
+}
+span {
+  font: normal 16px Arial, sans-serif;
+  color: #fff;
+}
+.small {
+  font-size: 80%;
+}
+
+/*- Linker -------------------------------------------------------------------------------------------- */
+a {
+  color: #ffffff;
+  font: normal 16px Arial, sans-serif;
+  text-decoration: underline;
+}
+a:hover {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/*- Form ----------------------------------------------------------------------------------------------- */ 
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 5px;
+}
+input:hover, select:hover, textarea:hover {
+  color: #000000;
+  background: #f9f9f9;
+  text-decoration: none;
+}
+
+input[type='submit'],button {
+  padding: 10px;
+  background: #FFD700;
+  border: none;
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+  
+input[type='submit'], button:hover, button:focus {
+  background-color: #F082AC;
+}
+
+
+
+/*- Container, background and overlay ----------------------------------------------------------------- */ 
+.container {
+  /* Full viewport height while staying responsive */
+  min-height: 100vh;
+  width: 100%; /* Use 100% instead of 100vw to prevent horizontal scroll */
+  overflow: hidden;
+
+  /* Background image settings */
+  background-image: url('/gfx/hero/pexels-asphotograpy-868110.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Positioning for overlay */
+  position: relative;
+}
+
+.container::after {
+  content: '';
+  position: fixed; /* Ensures overlay covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Use 100% to match viewport width without causing overflow */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+.container-content {
+  position: relative;
+  z-index: 2; /* Content goes above overlay */
+  color: #fff; /* Optional: Text color for readability */
+  padding: 20px; /* Add padding to avoid content touching edges on small screens */
+  box-sizing: border-box; /* Ensures padding doesn’t cause overflow */
+}
+
+
+/*- Header -------------------------------------------------------------------------------------------- */
+header{
+  margin: 0;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+header > p{
+  margin: 0px 0px 10px 0px;
+  padding: 0;
+}
+header > p > a{
+  color: #fff;
+  font: bold 28px Tahoma, Arial, sans-serif;
+  letter-spacing: 10px;
+  text-decoration: none;
+}
+header > p > a:hover{
+  color: #ffd700;
+  font: bold 28px GABRWFFR, Arial, sans-serif;
+  letter-spacing: 11px;
+  text-decoration: none;
+}
+header > span{
+  color: #fff;
+  font: normal 18px Arial, sans-serif;
+}
+
+
+
+/*- Nav ------------------------------------------------------------------------------------------------ */
+/* Nav Styles */
+.navbar {
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Center the navbar content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar ul {
+  list-style: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  display: flex; /* Align items horizontally */
+}
+
+.navbar li {
+  margin: 0 20px; /* Space between items */
+}
+
+.nav-item {
+  display: flex; /* Use flex to stack items vertically */
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center align items */
+  text-align: center; /* Center text */
+  border-radius: 5px; /* Make the background round */
+  padding: 10px;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.2); /* Change the background color on hover */
+}
+.navbar > ul > li > a{
+  text-decoration: none; /* Underline on hover */
+}
+
+.navbar > ul > li > a > div > span{
+  text-decoration: none; /* Underline on hover */
+  font-size: 110%;
+}
+
+
+
+/*- Main ---------------------------------------------------------------------------------------------- */
+main{
+  margin: 0px auto;
+  width: 400px;
+
+
+  text-align: center;
+
+}
+
+
+
+/*- Tabs ---------------------------------------------------------------------------------------------- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+.tabs > a {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  margin: 0px 20px 0px 0px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+.tabs > a:hover, .tabs > a.active {
+  border-bottom: 2px solid #FFD700;
+}
+
+/*- Feedback boxes ------------------------------------------------------------------------- */
+/* Usage: 
+  <div class="info">
+    <span>Info message goes here.</span>
+  </div>
+
+  <div class="success_smal">
+    <span>Small success message goes here.</span>
+  </div>
+*/
+.info, .success, .warning, .error, .validation, .info_smal, .success_smal, .warning_smal, .error_smal, .validation_smal {
+  border: 1px solid;
+  margin: 10px 0;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  text-align: left;
+}
+
+.info, .info_smal {
+  color: #00529b;
+  background-color: #bde5f8;
+}
+
+.success, .success_smal {
+  color: #4f8a10;
+  background-color: #dff2bf;
+}
+
+.warning, .warning_smal {
+  color: #9f6000;
+  background-color: #feefb3;
+}
+
+.error, .error_smal {
+  color: #d8000c;
+  background-color: #ffbaba;
+}
+
+.info {
+  background-image: url('/icons/24x24/info_24dp_00529B_FILL0_wght400_GRAD0_opsz24.svg');
+}
+
+.success {
+  background-image: url('/icons/24x24/check_24dp_4F8A10_FILL0_wght400_GRAD0_opsz24.svg');
+}
+
+.warning {
+  background-image: url('/icons/24x24/warning_24dp_9F6000_FILL0_wght400_GRAD0_opsz24.svg');
+}
+
+.error {
+  background-image: url('/icons/24x24/error_24dp_D8000C_FILL0_wght400_GRAD0_opsz24.svg');
+}
+
+.info_smal {
+  padding: 5px 10px 5px 32px;
+  background-image: url('/icons/20x20/info_20dp_00529B_FILL0_wght400_GRAD0_opsz20.svg');
+}
+
+.success_smal {
+  padding: 5px 10px 5px 32px;
+  background-image: url('/icons/20x20/check_20dp_4F8A10_FILL0_wght400_GRAD0_opsz20.svg');
+}
+
+.warning_smal {
+  padding: 5px 10px 5px 32px;
+  background-image: url('/icons/20x20/warning_20dp_9F6000_FILL0_wght400_GRAD0_opsz20.svg');
+}
+
+.error_smal {
+  padding: 5px 10px 5px 32px;
+  background-image: url('/icons/20x20/error_20dp_D8000C_FILL0_wght400_GRAD0_opsz20.svg');
+}
+
+/* Span Colors */
+.info > span, .info_smal > span {
+  color: #00529b;
+}
+
+.success > span, .success_smal > span {
+  color: #4f8a10;
+}
+
+.warning > span, .warning_smal > span {
+  color: #9f6000;
+}
+
+.error > span, .error_smal > span {
+  color: #d8000c;
+}
+
+
+/*- Message list --------------------------------------------------------------------------------------- */
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+div.message{
+  background: #f4f4f4;
+  margin: 0px auto;
+  width: 400px;
+
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+
+  text-align: center;
+}
+
+
+.attachments {
+  margin-top: 10px;
+}
+
+.attachment {
+  margin-bottom: 10px;
+}
+
+.attachment img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attachment p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+
+/*- Footer ---------------------------------------------------------------------------------------------- */
+footer{
+  text-align: center; /* « The magic. */
+  margin: 20px 0px 0px 0px;
+}
+footer > ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer > ul > li {
+  display: inline; /* « More magic. */
+}
+
+footer > ul > li > a {
+  display: inline-block; /* « Last bit of magic. */
+  padding: 10px 20px 10px 20px;
+  color: #ffffff;
+  opacity: 0.8;
+  font: normal 14px Arial, sans-serif;
+  text-decoration: none;
+
+}
+footer > ul > li > a:hover {
+  color: #ffd700;
+  text-decoration: none;
+}
